@@ -94,17 +94,70 @@ const lastDigit = (n) => {
 ```
 </details>
 
+### Задание №2
+
+Вы почти починили лифт, но сбилась система расписания лифта с другими лифтами здания, системой обслуживания и тд. Вы не можете просто так это оставить, иначе потом пострадают люди, если лифт запустится не в свое время, например, когда все думают, что идет тех. обслуживание.
+
+Поэтому ваша задача написать функцию checkAvailability которая принимает 2 аргумента:  
+
+schedule - расписание занятости в формате "hh:mm-hh:mm" 24-h.  Расписание в виде массива строк, состоящих из времени начала и конца временного отрезка, разделенных "-" (Например, ["09:30-10:15"]).
+
+currentTime - строка с определенным временем в формате hh:mm 24-h, для которой функция будет проверять доступность на основе расписания.
+
+Если во время currentTime  не запланировано никаких работ с лифтом(есть свободный временной слот), функция должна возвращать строку "available". 
+Если в currentTime уже занято, функция должна возвращать строку с временем, когда будет доступно.  
+
+Если время, переданное в качестве входных данных, равно времени окончания, функция также должна возвращать значение "available".
+
+Примеры:
+
+checkAvailability(["09:30-10:15", "12:20-15:50"], "11:00") --> "available"
+checkAvailability(["09:30-10:15", "12:20-15:50"], "10:00") --> "10:15"
+
+<b>Ответы:</b>
+
+<details>
+  <summary>Codepen</summary>
+  
+  [Megafon Game #3](https://codepen.io/newbornfrontender/pen/XWXOgXZ)
+</details>
+
+<details>
+  <summary>Пример кода</summary>
+  
+```js
+const splitRange = (range) => range.split('-');
+
+const isInRange = (value, range) => {
+  return value >= range[0] && value <= range[1] ? range[1] : 'available';
+};
+
+const checkAvailability = (schedule, currentTime) => {
+  const isEqual = splitRange(schedule[0])[1] === splitRange(schedule[1])[0];
+  
+  if (isEqual) return splitRange(schedule[1])[1];
+  
+  const result = schedule.map((range) => isInRange(currentTime, splitRange(range)));
+  const isAvailable = result.every(value => value === 'available');
+  const time = result.filter(value => value !== 'available')[0];
+    
+  return isAvailable ? 'available' : time;
+};
+```
+</details>
+
 ## ToDo
 
 Обязательные для прохождения сюжета:
 
-- [x] Добавить решение 1 задания
-- [x] Добавить решение 2 задания
-- [ ] Добавить решение 3 задания
+- [x] Добавить решение для 1 главы
+- [x] Добавить решение для 2 главы
+- [x] Добавить решение для 3 главы
+- [ ] Добавить решение для эпилога
 
 Обязательные для устройства в Megafon:
 
-- [ ] Добавить решение 1 задания
+- [ ] Добавить решение для 4 главы
 
 ## License
 
