@@ -56,3 +56,9 @@ const stringFormat = (n) => {
 Обязательные для устройства в Megafon:
 
 - [ ] Добавить решение 1 задания
+
+## License
+
+Данные ответы к заданиям и говнокод являются интеллектуальной собственностью [Sergey Mirasov](https://github.com/sergeymirasov) и опубликованы с ознакомительной целью. Всем добра.
+
+[MIT](/LICENSE) @ Sergey Mirasov
