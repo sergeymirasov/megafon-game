@@ -54,7 +54,7 @@ const stringFormat = (n) => {
 ```
 </details>
 
-<br />
+<hr />
 
 ### Задание №2
 
@@ -96,7 +96,7 @@ const lastDigit = (n) => {
 ```
 </details>
 
-<br />
+<hr />
 
 ### Задание №3
 
