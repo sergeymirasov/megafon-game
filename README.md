@@ -61,4 +61,4 @@ const stringFormat = (n) => {
 
 Данные ответы к заданиям и говнокод являются интеллектуальной собственностью [Sergey Mirasov](https://github.com/sergeymirasov) и опубликованы с ознакомительной целью. Всем добра.
 
-[MIT](/LICENSE) @ Sergey Mirasov
+[MIT](/LICENSE) @ [Sergey Mirasov](https://github.com/sergeymirasov)
